@@ -27,7 +27,7 @@ No front-end ele será apresentado na forma de um campo de texto com label **Cup
 
 - Permitir o uso de cupom no carrinho.
 - Permitir remoção do cupom no carrinho.
-- Nenhum débito técnico deve ser incluído nessa funcionalida, ou seja, deve ser entregue testes automatizados em todas as camadas:
+- Nenhum débito técnico deve ser incluído nessa funcionalide, ou seja, devem ser entregues testes automatizados em todas as camadas:
 
   - Testes de unidade pelos desenvolvedores (e testadores).
   - Testes de integração pelos desenvolvedores e/ou testadores.
@@ -36,6 +36,76 @@ No front-end ele será apresentado na forma de um campo de texto com label **Cup
 - Avaliar com o time a necessidade de um teste de performance na aplicação para comportar a feature de Cupom.
 - O fechamento de compras não deve ser afetado, e permitir a compra com ou sem cupom aplicado no carrinho.
 
-### Cenário em BDD
+### Cenários de teste em BDD
 
 Nesse trecho serão escritos os cenários de teste que validarão os requisitos propostos na nova funcionalidade, usando uma linguagem natural para melhor entendimento do time.
+
+Obs.: Esses não são todos cenários de testes possíveis, apenas uma amostra.
+
+| CT-01  | Aplicar cupom válido clicando no botão usar cupom                  |
+| ------ | ------------------------------------------------------------------ |
+| Dado   | que estou no carrinho com um produto adicionado                    |
+| Quando | aplico um cupom **válido**                                         |
+| Então  | o texto do cupom é exibido "aplicado" e exibe uma opção de remover |
+| E      | o desconto deve ser exibido no carrinho                            |
+
+| CT-02  | Aplicar cupom válido clicando no botão "Enter" do teclado          |
+| ------ | ------------------------------------------------------------------ |
+| Dado   | que estou no carrinho com um produto adicionado                    |
+| Quando | aplico um cupom **válido**                                         |
+| Então  | o texto do cupom é exibido "aplicado" e exibe uma opção de remover |
+| E      | o desconto deve ser exibido no carrinho                            |
+
+| CT-03  | Remover cupom aplicado                                                    |
+| ------ | ------------------------------------------------------------------------- |
+| Dado   | que estou no carrinho com um cupom aplicado                               |
+| Quando | seleciono a opção de remover o cupom                                      |
+| Então  | o cupom é removido voltando a exibir os campos de cupom                   |
+| E      | o desconto deve ser removido do carrinho voltando às condições anteriores |
+
+| CT-04  | Aplicar cupom inválido/não existente                           |
+| ------ | -------------------------------------------------------------- |
+| Dado   | que estou no carrinho com um produto adicionado                |
+| Quando | tento aplicar um cupom **inválido**                            |
+| Então  | o campo do cupom é limpo voltando à condição anterior          |
+| E      | a mensagem de erro deve ser exibida: _"Cupom não encontrado."_ |
+
+| CT-05  | Aplicar cupom expirado                                         |
+| ------ | -------------------------------------------------------------- |
+| Dado   | que estou no carrinho com um produto adicionado                |
+| Quando | tento aplicar um cupom **expirado**                            |
+| Então  | o campo do cupom é limpo voltando à condição anterior          |
+| E      | a mensagem de erro deve ser exibida: _"O cupom não é válido."_ |
+
+| CT-06  | Aplicar cupom de frete grátis                                  |
+| ------ | -------------------------------------------------------------- |
+| Dado   | que estou no carrinho com um produto adicionado                |
+| Quando | aplico um cupom **válido** de **frete grátis**                 |
+| Então  | no campo ao lado do cupom é exibido o termo **"Frete grátis"** |
+| E      | o valor do frete é removido do carrinho                        |
+
+| CT-07  | Aplicar cupom de desconto percentual                                                |
+| ------ | ----------------------------------------------------------------------------------- |
+| Dado   | que estou no carrinho com um produto adicionado                                     |
+| Quando | aplico um cupom **válido** de **desconto percentual**                               |
+| Então  | no campo ao lado do cupom é exibido o termo **"Desconto: X % (frete não incluso)"** |
+| E      | o valor do desconto é aplicado no total do carrinho                                 |
+
+| CT-08  | Aplicar cupom de desconto regular (Ex.: R$10,00, R$50,00)                            |
+| ------ | ------------------------------------------------------------------------------------ |
+| Dado   | que estou no carrinho com um produto adicionado                                      |
+| Quando | aplico um cupom **válido** de **desconto regular**                                   |
+| Então  | no campo ao lado do cupom é exibido o termo **"Desconto: R$ X (frete não incluso)"** |
+| E      | o valor do desconto é aplicado no total do carrinho                                  |
+
+| CT-09  | Fechar compra com cupom aplicado                                                  |
+| ------ | --------------------------------------------------------------------------------- |
+| Dado   | que estou no carrinho com um cupom (regular / percentual / frete grátis) aplicado |
+| Quando | finalizo a compra                                                                 |
+| Então  | o valor / percentual / frete grátis devem permanecer no fechamento de compra      |
+
+| CT-10  | Fechar compra sem cupom aplicado                      |
+| ------ | ----------------------------------------------------- |
+| Dado   | que estou no carrinho sem um cupom aplicado           |
+| Quando | finalizo a compra                                     |
+| Então  | o valor total deve permanecer no fechamento de compra |
