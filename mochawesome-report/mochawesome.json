@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-19T22:20:04.174Z",
+    "end": "2023-06-19T22:20:27.038Z",
+    "duration": 22864,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "87f19d5d-115d-4d5d-a957-fee1816874b1",
+      "title": "",
+      "fullFile": "cypress/e2e/cupom.cy.js",
+      "file": "cypress/e2e/cupom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aba8f071-8184-4f85-91e6-3ef6bd38d0ac",
+          "title": "Coupon Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cupom válido com botão adicionar",
+              "fullTitle": "Coupon Feature Cupom válido com botão adicionar",
+              "timedOut": null,
+              "duration": 4487,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const cupom = this.data.coupon.freteGratis;\ncartPage.adicionarCupom(cupom);\ncartPage.cupomAplicado(cupom);",
+              "err": {},
+              "uuid": "2049b929-9d8a-407b-a87e-f588d6c9eaec",
+              "parentUUID": "aba8f071-8184-4f85-91e6-3ef6bd38d0ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cupom válido com tecla Enter",
+              "fullTitle": "Coupon Feature Cupom válido com tecla Enter",
+              "timedOut": null,
+              "duration": 3848,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const cupom = this.data.coupon.freteGratis;\ncartPage.adicionarCupomTeclaEnter(cupom);\ncartPage.cupomAplicado(cupom);",
+              "err": {},
+              "uuid": "47e2ea3f-ee7c-408c-9898-22524d08669f",
+              "parentUUID": "aba8f071-8184-4f85-91e6-3ef6bd38d0ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cupom inválido",
+              "fullTitle": "Coupon Feature Cupom inválido",
+              "timedOut": null,
+              "duration": 3461,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cartPage.adicionarCupom(this.data.coupon.invalido);\ncartPage.exibidaMensagemCupomInvalido();",
+              "err": {},
+              "uuid": "e60b5358-8e6c-46b5-852c-dc24c8ca7fff",
+              "parentUUID": "aba8f071-8184-4f85-91e6-3ef6bd38d0ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar cupom de frete grátis",
+              "fullTitle": "Coupon Feature Validar cupom de frete grátis",
+              "timedOut": null,
+              "duration": 3758,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cartPage.adicionarCupom(this.data.coupon.freteGratis);\ncartPage.cupomFreteGratisAplicado();",
+              "err": {},
+              "uuid": "c5104da7-cb7d-47a1-888d-b3ec8dab9195",
+              "parentUUID": "aba8f071-8184-4f85-91e6-3ef6bd38d0ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar cupom de valor regular",
+              "fullTitle": "Coupon Feature Validar cupom de valor regular",
+              "timedOut": null,
+              "duration": 3603,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cartPage.adicionarCupom(this.data.coupon.regularTrintaReais);\ncartPage.cupomValorRegularAplicado();",
+              "err": {},
+              "uuid": "885ead6a-4778-4b74-b8eb-a9e91a310503",
+              "parentUUID": "aba8f071-8184-4f85-91e6-3ef6bd38d0ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar cupom de valor percentual",
+              "fullTitle": "Coupon Feature Validar cupom de valor percentual",
+              "timedOut": null,
+              "duration": 3654,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cartPage.adicionarCupom(this.data.coupon.percentual10off);\ncartPage.cupomValorPercentualAplicado();",
+              "err": {},
+              "uuid": "1dab8736-0280-4567-8d57-0d41da68cd03",
+              "parentUUID": "aba8f071-8184-4f85-91e6-3ef6bd38d0ac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2049b929-9d8a-407b-a87e-f588d6c9eaec",
+            "47e2ea3f-ee7c-408c-9898-22524d08669f",
+            "e60b5358-8e6c-46b5-852c-dc24c8ca7fff",
+            "c5104da7-cb7d-47a1-888d-b3ec8dab9195",
+            "885ead6a-4778-4b74-b8eb-a9e91a310503",
+            "1dab8736-0280-4567-8d57-0d41da68cd03"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22811,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

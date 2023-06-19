@@ -121,7 +121,7 @@ Obs2: O escopo dos testes ficou apenas no carrinho, não atendendo aos critério
 
 ### :scroll: Relatório de testes
 
-A execução dos testes manuais, mesmo além do planejamento de testes não detectou nenhum problema dados os requisitos técnicos e de negócio. Porém podemos simular um _"bug report"_ de erro para um cenário não especificado:
+A execução dos testes manuais, mesmo executando testes exploratórios além do planejamento de testes não detectou nenhum problema, dados os requisitos técnicos e de negócio. Porém podemos simular um _"bug report"_ de erro para um cenário não especificado:
 
 ---
 
@@ -144,8 +144,14 @@ O campo "cupom" não limita o preenchimento em "30" caracteres, permitindo que o
 1. O campo permite incluir mais de 30 caracteres
 1. Faz uma requisição ao "backend" para validar o cupom
 
-#### Detalhes adicionais / evidências
+#### Evidências
 
 ![Evidência](./img/evidencia.png)
 
 ---
+
+Quanto ao relatório de testes automatizados, foi utilizada uma biblioteca do mocha chamada **mochawesome** para gerar um relatório em HTML. Uma amostra do resultado:
+
+![Relatório](./img/report_loja.png)
+
+Para ter acesso aos HTML gerado completo basta clonar o projeto e acessar o .html na pasta **./mochawesome-report**
