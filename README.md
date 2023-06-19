@@ -166,3 +166,6 @@ Para executar o projeto, seguir os seguintes passos:
 npm install
 npx cypress run --reporter mochawesome
 ```
+
+Prévia da execução:
+![Execução](./img/cupom.cy.js.gif)
