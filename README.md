@@ -110,11 +110,42 @@ Obs.: Esses não são todos cenários de testes possíveis, apenas uma amostra.
 | Quando | finalizo a compra                                     |
 | Então  | o valor total deve permanecer no fechamento de compra |
 
-### Projeto de testes end-to-end embarcado
+### :robot: Projeto de testes end-to-end
 
-Conforme orientação do critério de aceitação, foi definido um projeto de testes end-to-end que comporta alguns dos requisitos propostos.
+Conforme orientação do critério de aceitação, foi definido um projeto de testes _end-to-end_ que comporta alguns dos requisitos propostos.
 Foi escrito usando o framework **Cypress** com **Javascript**, usando o padrão de projeto de testes automatizados **Page Objects**, assim permitindo a expansão do projeto de forma limpa e organizada pelo time.
 
 Obs1: Não foi coberta a camada de API, mesmo com o framework suportanto, dado o tempo para entrega do desafio.
 
 Obs2: O escopo dos testes ficou apenas no carrinho, não atendendo aos critérios de fechamento de compra, dado o mesmo motivo acima.
+
+### :scroll: Relatório de testes
+
+A execução dos testes manuais, mesmo além do planejamento de testes não detectou nenhum problema dados os requisitos técnicos e de negócio. Porém podemos simular um _"bug report"_ de erro para um cenário não especificado:
+
+---
+
+#### Descrição do problema
+
+O campo "cupom" não limita o preenchimento em "30" caracteres, permitindo que o usuário final insira um cupom com quantidade superior à 30 e uma requisição ao _backend_ é feita de forma desnecessária.
+
+#### Passos para reproduzir o problema
+
+1. Estar no carrinho de compras.
+1. Adicionar o cupom "Loremipsumdolorsitametconsecteturadipiscingelit"
+1. Clicar em "Usar cupom"
+
+#### Resultado esperado
+
+1. O campo não deve permitir incluir mais de 30 caracteres
+
+#### Resultado atual
+
+1. O campo permite incluir mais de 30 caracteres
+1. Faz uma requisição ao "backend" para validar o cupom
+
+#### Detalhes adicionais / evidências
+
+![Evidência](./img/evidencia.png)
+
+---
