@@ -1,0 +1,22 @@
+{
+  "name": "loja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavo-almeida/loja.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavo-almeida/loja/issues"
+  },
+  "homepage": "https://github.com/gustavo-almeida/loja#readme",
+  "devDependencies": {
+    "cypress": "^12.14.0"
+  }
+}
