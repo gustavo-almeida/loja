@@ -4,12 +4,12 @@
 
 ## :writing_hand: Documentação de negócio e testes
 
-:page_facing_up: **Descrição:**
+### :page_facing_up: Descrição
 
 Uma funcionalidade nova está sendo incluída no carrinho de compras da LI. Um cupom que pode dar diferentes tipos de descontos como: frete grátis, desconto percentual, desconto regular etc.
 No front-end ele será apresentado na forma de um campo de texto com label **Cupom de desconto:** e um botão para aplicar o cupom, com label **Usar cupom**.
 
-:monocle_face: **Regras de negócio:**
+### :monocle_face: Regras de negócio:
 
 - Cupom não é um campo obrigatório.
 - Apenas um cupom pode ser aplicado por carrinho.
@@ -110,15 +110,6 @@ Obs.: Esses não são todos cenários de testes possíveis, apenas uma amostra.
 | Quando | finalizo a compra                                     |
 | Então  | o valor total deve permanecer no fechamento de compra |
 
-### :robot: Projeto de testes end-to-end
-
-Conforme orientação do critério de aceitação, foi definido um projeto de testes _end-to-end_ que comporta alguns dos requisitos propostos.
-Foi escrito usando o framework **Cypress** com **Javascript**, usando o padrão de projeto de testes automatizados **Page Objects**, assim permitindo a expansão do projeto de forma limpa e organizada pelo time.
-
-Obs1: Não foi coberta a camada de API, mesmo com o framework suportanto, dado o tempo para entrega do desafio.
-
-Obs2: O escopo dos testes ficou apenas no carrinho, não atendendo aos critérios de fechamento de compra, dado o mesmo motivo acima.
-
 ### :scroll: Relatório de testes
 
 A execução dos testes manuais, mesmo executando testes exploratórios além do planejamento de testes não detectou nenhum problema, dados os requisitos técnicos e de negócio. Porém podemos simular um _"bug report"_ de erro para um cenário não especificado:
@@ -154,4 +145,24 @@ Quanto ao relatório de testes automatizados, foi utilizada uma biblioteca do mo
 
 ![Relatório](./img/report_loja.png)
 
-Para ter acesso aos HTML gerado completo basta clonar o projeto e acessar o .html na pasta **./mochawesome-report**
+Para ter acesso aos HTML gerado completo basta clonar o projeto e acessar o .html na pasta **./mochawesome-report** (mais detalhes abaixo)
+
+### :robot: Projeto de testes end-to-end
+
+Conforme orientação do critério de aceitação, foi definido um projeto de testes _end-to-end_ que comporta alguns dos requisitos propostos.
+Foi escrito usando o framework **Cypress** com **Javascript**, usando o padrão de projeto de testes automatizados **Page Objects**, assim permitindo a expansão do projeto de forma limpa e organizada pelo time.
+
+Obs1: Não foi coberta a camada de API, mesmo com o framework suportanto-a, dado o tempo para entrega do desafio.
+
+Obs2: O escopo dos testes ficou apenas no carrinho, não atendendo aos critérios de fechamento de compra, dado o mesmo motivo acima.
+
+Para executar o projeto, seguir os seguintes passos:
+
+- Ter o NodeJS instalado (versão atual);
+- Clonar o projeto;
+- Rodar os comandos abaixo na pasta do projeto;
+
+```console
+npm install
+npx cypress run --reporter mochawesome
+```
