@@ -11,6 +11,8 @@ describe("cupom", () => {
 
   it("Cupom invalido", () => {
     cartPage.adicionarCupom("banana");
-    cartPage.mensagemCupomExibida();
+    cartPage.exibidaMensagemCupomInvalido();
   });
+
+  it("Valida cupom aplicado", () => {});
 });

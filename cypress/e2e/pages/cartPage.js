@@ -10,7 +10,7 @@ class cartPage {
     this.elements.buttonCupom().click();
   }
 
-  mensagemCupomExibida() {
+  exibidaMensagemCupomInvalido() {
     this.elements.msgAlert().should("contain.text", "Cupom não encontrado.");
   }
 }
