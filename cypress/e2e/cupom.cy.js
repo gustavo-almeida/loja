@@ -22,8 +22,23 @@ describe("Coupon Feature", () => {
     cartPage.cupomAplicado(cupom);
   });
 
-  it("Cupom invalido", function () {
+  it("Cupom inválido", function () {
     cartPage.adicionarCupom(this.data.coupon.invalido);
     cartPage.exibidaMensagemCupomInvalido();
+  });
+
+  it("Validar cupom de frete grátis", function () {
+    cartPage.adicionarCupom(this.data.coupon.freteGratis);
+    cartPage.cupomFreteGratisAplicado();
+  });
+
+  it("Validar cupom de valor regular", function () {
+    cartPage.adicionarCupom(this.data.coupon.regularTrintaReais);
+    cartPage.cupomValorRegularAplicado();
+  });
+
+  it("Validar cupom de valor percentual", function () {
+    cartPage.adicionarCupom(this.data.coupon.percentual10off);
+    cartPage.cupomValorPercentualAplicado();
   });
 });

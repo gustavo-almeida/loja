@@ -6,6 +6,7 @@ class cartPage {
     appliedCouponLabel: () => cy.get(".cupom-sucesso > .cor-secundaria"),
     appliedCouponName: () => cy.get(".cupom-codigo"),
     appliedCouponRemoveOption: () => cy.get(".text-error"),
+    appliedCouponValueLabel: () => cy.get(".cupom-valor"),
   };
 
   adicionarCupom(value) {
@@ -27,6 +28,29 @@ class cartPage {
       .should("contain.text", "Cupom de desconto");
     this.elements.appliedCouponName().should("contain.text", value);
     this.elements.appliedCouponRemoveOption().should("be.visible");
+  }
+
+  cupomFreteGratisAplicado() {
+    this.elements
+      .appliedCouponValueLabel()
+      .should("contain.text", "Frete Grátis");
+  }
+
+  cupomValorAplicado() {
+    this.elements.appliedCouponValueLabel().should("contain.text", "Desconto:");
+    this.elements
+      .appliedCouponValueLabel()
+      .should("contain.text", "(frete não incluso)");
+  }
+
+  cupomValorRegularAplicado() {
+    this.cupomValorAplicado();
+    this.elements.appliedCouponValueLabel().should("contain.text", "R$");
+  }
+
+  cupomValorPercentualAplicado() {
+    this.cupomValorAplicado();
+    this.elements.appliedCouponValueLabel().should("contain.text", "%");
   }
 }
 
