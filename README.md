@@ -1,15 +1,15 @@
 # loja
 
-### Feature Cupom
+### :ticket: Feature Cupom
 
-## Documentação de negócio e testes
+## :writing_hand: Documentação de negócio e testes
 
-**Descrição:**
+:page_facing_up: **Descrição:**
 
 Uma funcionalidade nova está sendo incluída no carrinho de compras da LI. Um cupom que pode dar diferentes tipos de descontos como: frete grátis, desconto percentual, desconto regular etc.
 No front-end ele será apresentado na forma de um campo de texto com label **Cupom de desconto:** e um botão para aplicar o cupom, com label **Usar cupom**.
 
-**Regras de negócio:**
+:monocle_face: **Regras de negócio:**
 
 - Cupom não é um campo obrigatório.
 - Apenas um cupom pode ser aplicado por carrinho.
@@ -23,7 +23,7 @@ No front-end ele será apresentado na forma de um campo de texto com label **Cup
 - Ao remover um cupom aplicado, o carrinho deve ser atualizado para o contexto anterior à aplicação do cupom.
 - O fechamento de compras não deve ser afetado.
 
-### Critérios de aceitação
+### :ballot_box_with_check: Critérios de aceitação
 
 - Permitir o uso de cupom no carrinho.
 - Permitir remoção do cupom no carrinho.
@@ -36,7 +36,7 @@ No front-end ele será apresentado na forma de um campo de texto com label **Cup
 - Avaliar com o time a necessidade de um teste de performance na aplicação para comportar a feature de Cupom.
 - O fechamento de compras não deve ser afetado, e permitir a compra com ou sem cupom aplicado no carrinho.
 
-### Cenários de teste em BDD
+### :test_tube: Cenários de teste em BDD
 
 Nesse trecho serão escritos os cenários de teste que validarão os requisitos propostos na nova funcionalidade, usando uma linguagem natural para melhor entendimento do time.
 
@@ -109,3 +109,12 @@ Obs.: Esses não são todos cenários de testes possíveis, apenas uma amostra.
 | Dado   | que estou no carrinho sem um cupom aplicado           |
 | Quando | finalizo a compra                                     |
 | Então  | o valor total deve permanecer no fechamento de compra |
+
+### Projeto de testes end-to-end embarcado
+
+Conforme orientação do critério de aceitação, foi definido um projeto de testes end-to-end que comporta alguns dos requisitos propostos.
+Foi escrito usando o framework **Cypress** com **Javascript**, usando o padrão de projeto de testes automatizados **Page Objects**, assim permitindo a expansão do projeto de forma limpa e organizada pelo time.
+
+Obs1: Não foi coberta a camada de API, mesmo com o framework suportanto, dado o tempo para entrega do desafio.
+
+Obs2: O escopo dos testes ficou apenas no carrinho, não atendendo aos critérios de fechamento de compra, dado o mesmo motivo acima.

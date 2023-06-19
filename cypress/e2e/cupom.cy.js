@@ -2,17 +2,28 @@ const cartPage = require("./pages/cartPage");
 const homePage = require("./pages/homePage");
 const productPage = require("./pages/productPage");
 
-describe("cupom", () => {
+describe("Coupon Feature", () => {
   beforeEach(() => {
+    cy.fixture("testData").as("data");
     cy.visit("/");
     homePage.selecionaProdutoCategoriaUmNivel();
     productPage.selecionaOpcaoComprar();
   });
 
-  it("Cupom invalido", () => {
-    cartPage.adicionarCupom("banana");
-    cartPage.exibidaMensagemCupomInvalido();
+  it("Cupom válido com botão adicionar", function () {
+    const cupom = this.data.coupon.freteGratis;
+    cartPage.adicionarCupom(cupom);
+    cartPage.cupomAplicado(cupom);
   });
 
-  it("Valida cupom aplicado", () => {});
+  it("Cupom válido com tecla Enter", function () {
+    const cupom = this.data.coupon.freteGratis;
+    cartPage.adicionarCupomTeclaEnter(cupom);
+    cartPage.cupomAplicado(cupom);
+  });
+
+  it("Cupom invalido", function () {
+    cartPage.adicionarCupom(this.data.coupon.invalido);
+    cartPage.exibidaMensagemCupomInvalido();
+  });
 });
